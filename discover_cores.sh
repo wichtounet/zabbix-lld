@@ -6,9 +6,11 @@ cores=$(($cores-1))
 echo "{"
 echo "\"data\":["
 
+comma=""
 for core in $(seq 0 $cores)
 do
-	echo "    {\"{#COREID}\":\"$core\"},"
+	echo "    $comma{\"{#COREID}\":\"$core\"}"
+    comma=","
 done
 
 echo "]"

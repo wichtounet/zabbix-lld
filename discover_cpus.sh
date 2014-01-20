@@ -6,9 +6,11 @@ cpus=$(($cpus-1))
 echo "{"
 echo "\"data\":["
 
+comma=""
 for cpu in $(seq 0 $cpus)
 do
-    echo "    {\"{#CPUID}\":\"$cpu\"},"
+    echo "    $comma{\"{#CPUID}\":\"$cpu\"}"
+    comma=","
 done
 
 echo "]"
